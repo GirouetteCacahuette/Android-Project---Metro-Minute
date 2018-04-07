@@ -9,17 +9,36 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textColor="#000080"
-        android:textSize="20sp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.069" />
+
+    <EditText
+        android:id="@+id/editStation"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="279dp"
+        android:hint="@string/station_example"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="245dp"
+        android:text="@string/entrez_votre_station"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
 
 </android.support.constraint.ConstraintLayout>
