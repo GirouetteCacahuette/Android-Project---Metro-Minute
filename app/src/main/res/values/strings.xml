@@ -6,4 +6,5 @@
     <string name="rechercher">Rechercher</string>
     <string name="mlist">Liste des lignes</string>
     <string name="title_activity_metro_list">Metro List Activity</string>
+    <string name="metro_list">Liste des lignes</string>
 </resources>

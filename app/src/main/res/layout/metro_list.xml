@@ -2,20 +2,231 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    android:background="@drawable/first_view_background">
 
     <TextView
+        android:padding="10dip"
+        android:id="@+id/metro_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/metro_list"
+        android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.028" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/metro_list">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    tools:ignore="ContentDescription"
+                    android:id="@+id/logo_m"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="10dip"
+                    android:background="@drawable/logo_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="20dip">
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m1"
+                    android:background="@drawable/logo_m1"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m2"
+                    android:background="@drawable/logo_m2"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m3"
+                    android:background="@drawable/logo_m3"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m4"
+                    android:background="@drawable/logo_m4"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </TableRow>
+            <TableRow android:layout_marginTop="20dip">
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m5"
+                    android:background="@drawable/logo_m5"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m6"
+                    android:background="@drawable/logo_m6"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m7"
+                    android:background="@drawable/logo_m7"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m8"
+                    android:background="@drawable/logo_m8"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </TableRow>
+            <TableRow android:layout_marginTop="20dip">
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m9"
+                    android:background="@drawable/logo_m9"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m10"
+                    android:background="@drawable/logo_m10"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m11"
+                    android:background="@drawable/logo_m11"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m12"
+                    android:background="@drawable/logo_m12"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </TableRow>
+            <TableRow android:layout_marginTop="20dip">
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m13"
+                    android:background="@drawable/logo_m13"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageButton
+                    tools:ignore="ContentDescription"
+                    android:layout_marginStart="10dip"
+                    android:id="@+id/logo_m14"
+                    android:background="@drawable/logo_m14"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </TableRow>
+        </TableLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

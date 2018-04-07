@@ -1,21 +1,26 @@
 package fr.girouettecacahuete.metrominute;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity implements OnClickListener {
-    private Button rechercher_Button = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rechercher_Button = findViewById(R.id.RButton);
+        Button rechercher_Button = findViewById(R.id.RButton);
         rechercher_Button.setOnClickListener(this);
+
+        Button metro_List_Button = findViewById(R.id.MlistButton);
+        metro_List_Button.setOnClickListener(this);
+
+
 
     }
 
@@ -29,7 +34,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
 
             case R.id.MlistButton:
-
+                setContentView(R.layout.metro_list);
                 break;
         }
 
