@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="entrez_votre_station">Entrez votre station :</string>
     <string name="station_example">Ex: Châtelet</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="mlist">Liste des lignes</string>
+    <string name="title_activity_metro_list">Metro List Activity</string>
 </resources>
