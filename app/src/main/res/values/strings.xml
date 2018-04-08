@@ -7,4 +7,6 @@
     <string name="mlist">Liste des lignes</string>
     <string name="title_activity_metro_list">Metro List Activity</string>
     <string name="metro_list">Liste des lignes</string>
+    <string name="retour">Retour</string>
+    <string name="title_activity_stations_list">Stations List Activity</string>
 </resources>
