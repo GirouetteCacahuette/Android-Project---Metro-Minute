@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
+    private static final int DIALOG_ALERT = 10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements OnClickListener {
         switch (tag)
         {
             case "Recherche_Button":
-
+                showDialog(DIALOG_ALERT);
                 break;
 
             case "MlistButton":

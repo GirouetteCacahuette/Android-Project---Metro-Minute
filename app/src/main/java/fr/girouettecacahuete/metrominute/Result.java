@@ -5,4 +5,5 @@ import java.util.List;
 
 public class Result {
     public List<Station> stations;
+    public List<Schedule> schedules;
 }
