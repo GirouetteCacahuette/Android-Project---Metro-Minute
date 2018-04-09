@@ -48,7 +48,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="136dp"
             >
-
+            <!-- Stations or schedules will be added in this TableLayouts -->
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

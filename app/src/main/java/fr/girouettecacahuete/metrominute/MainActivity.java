@@ -22,7 +22,7 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View view) {
 
-        String tag = view.getTag().toString();
+        String tag = view.getTag().toString(); // We will use the buttons tag to know wich line the user chose
         String code = "";
         if(tag.contains("logo_m"))
         {
@@ -32,30 +32,30 @@ public class MainActivity extends Activity implements OnClickListener {
 
         switch (tag)
         {
-            case "Recherche_Button":
-                showDialog(DIALOG_ALERT);
+            case "Recherche_Button": // User clicked on search button
+
                 break;
 
-            case "MlistButton":
-                setContentView(R.layout.metro_list);
+            case "MlistButton": // User clicked on Metro list Button
+                setContentView(R.layout.metro_list); // We change the content to show the metros list
                 setMetro_ListListeners();
                 break;
 
-            case "logo_m":
+            case "logo_m": // User clicked on a Metro Logo
                 Intent intent = new Intent(MainActivity.this, StationsListActivity.class);
                 intent.putExtra("CODE", code);
-                startActivity(intent);
+                startActivity(intent); // We change the active activity, to show the chosen line stations. We send the number corresponding to the chosen line
                 break;
 
-            case "Return_Button":
-                setContentView(R.layout.activity_main);
+            case "Return_Button": // User clicked on a return Button
+                setContentView(R.layout.activity_main); // We return to first content
                 setMainActivityListeners();
                 break;
         }
 
     }
 
-    public void setMainActivityListeners()
+    public void setMainActivityListeners() // Sets all the listeners for the first content
     {
         Button rechercher_Button = findViewById(R.id.Recherche_Button);
         rechercher_Button.setOnClickListener(this);
@@ -64,7 +64,7 @@ public class MainActivity extends Activity implements OnClickListener {
         metro_List_Button.setOnClickListener(this);
     }
 
-    public void setMetro_ListListeners()
+    public void setMetro_ListListeners() // Sets all the listeners for the second content
     {
         ImageButton m1Button = findViewById(R.id.logo_m1);
         m1Button.setOnClickListener(this);

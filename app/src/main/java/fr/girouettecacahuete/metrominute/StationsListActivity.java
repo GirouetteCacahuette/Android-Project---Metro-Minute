@@ -19,7 +19,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 public class StationsListActivity extends Activity implements View.OnClickListener {
-    List<Station> saved_stations= null;
+    List<Station> saved_stations= null; // Used to keep all the stations from a line, to access from anywhere
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,29 +27,28 @@ public class StationsListActivity extends Activity implements View.OnClickListen
         setContentView(R.layout.stations_list);
         setStationsListActivityListeners();
 
-        Intent intent = getIntent();
+        Intent intent = getIntent(); // We receive the line number
         if(intent != null)
         {
-            appelApi(intent.getStringExtra("CODE"));
+            appelApi(intent.getStringExtra("CODE")); // First call to the RATP API, to collect the stations list
         }
     }
 
     public void appelApi(final String code)
     {
         RatpServices Api = new RestAdapter.Builder().setEndpoint(RatpServices.ENDPOINT).build().create(RatpServices.class);
-        // Appel Asynchrone bien lire
 
         Api.listStationsAsync(code, new Callback<ApiResult>() {
             @Override
-            public void success(ApiResult apiresult, Response response) {
-                for (Station station : saved_stations = apiresult.result.stations) {
+            public void success(ApiResult apiresult, Response response) { // In case of success
+                for (Station station : saved_stations = apiresult.result.stations) { // We save the stations for later uses
 
                 }
-                afficherStations(apiresult.result.stations, code);
+                afficherStations(apiresult.result.stations, code); // Stations list is displayed
             }
 
             @Override
-            public void failure(RetrofitError error) {
+            public void failure(RetrofitError error) { // In case of failure
                 TextView text = findViewById(R.id.Stations_list);
                 text.setText(error.getMessage());
             }
@@ -66,7 +65,7 @@ public class StationsListActivity extends Activity implements View.OnClickListen
         TableLayout tbl = findViewById(R.id.Stations_Table_Layout);
         tbl.removeAllViews();
 
-        for(int i = 0; i<stations.size(); i++)
+        for(int i = 0; i<stations.size(); i++) // We dynamically add TableRow layouts, to welcome all the stations
         {
             TableRow row = new TableRow(this);
             TextView station = new TextView(this);
@@ -87,7 +86,7 @@ public class StationsListActivity extends Activity implements View.OnClickListen
 
     }
 
-    public void appelApiSchedules(final String code, final String station)
+    public void appelApiSchedules(final String code, final String station) // New call to the API, to collect line schedules
     {
         RatpServices Api = new RestAdapter.Builder().setEndpoint(RatpServices.ENDPOINT).build().create(RatpServices.class);
 
@@ -111,14 +110,12 @@ public class StationsListActivity extends Activity implements View.OnClickListen
         String title = "Prochains trains Metro " + code + "\nStation " + saved_stations.get(Integer.parseInt(code)).getName();
         titleView.setText(title);
 
-
-
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(70, 0, 0, 75);
         TableLayout tbl = findViewById(R.id.Stations_Table_Layout);
         tbl.removeAllViews();
 
-        TextView dest = new TextView(this);
+        TextView dest = new TextView(this); // A simple textView to display the destination
         String direction = "Direction: " + schedules.get(0).getDestination();
         dest.setText(direction);
         dest.setTextColor(Color.BLACK);
@@ -130,7 +127,7 @@ public class StationsListActivity extends Activity implements View.OnClickListen
         first_row.addView(dest, layoutParams);
         tbl.addView(first_row);
 
-        for(int i = 0; i<schedules.size(); i++)
+        for(int i = 0; i<schedules.size(); i++) // Again, we add dynamically TableRow layouts, this time to welcome schedules
         {
             TableRow row = new TableRow(this);
             TextView schedule = new TextView(this);
@@ -145,7 +142,7 @@ public class StationsListActivity extends Activity implements View.OnClickListen
             tbl.addView(row);
         }
 
-        RatpServices Api = new RestAdapter.Builder().setEndpoint(RatpServices.ENDPOINT).build().create(RatpServices.class);
+        RatpServices Api = new RestAdapter.Builder().setEndpoint(RatpServices.ENDPOINT).build().create(RatpServices.class); // We need to call again the API, to collect schedules from trains going the other way.
 
         Api.listSchedulesBAsync(code, station, new Callback<ApiResult>() {
             @Override
@@ -163,7 +160,7 @@ public class StationsListActivity extends Activity implements View.OnClickListen
 
     }
 
-    public void afficherSchedulesB(List<Schedule> schedules, String code, String station)
+    public void afficherSchedulesB(List<Schedule> schedules, String code, String station) // We add schedules to the other destination to the content
     {
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(70, 0, 0, 75);
@@ -206,7 +203,7 @@ public class StationsListActivity extends Activity implements View.OnClickListen
     @Override
     public void onClick(View view) {
 
-        String tag = view.getTag().toString();
+        String tag = view.getTag().toString(); // We use tag to know which station is selected
         String code = null;
         String station = null;
         if(tag.contains("station_"))
