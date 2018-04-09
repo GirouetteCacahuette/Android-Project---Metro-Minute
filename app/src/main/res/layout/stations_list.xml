@@ -9,15 +9,50 @@
     tools:context=".StationsListActivity">
 
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/Return_Button"
+        android:tag = "Return_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/retour"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/app_name"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="292dp" />
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/Stations_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:text="@string/metro_list"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128" />
+
+    <ScrollView
+        android:id="@+id/Scroll_Stations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="136dp"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Stations_Table_Layout">
+
+        </TableLayout>
+
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

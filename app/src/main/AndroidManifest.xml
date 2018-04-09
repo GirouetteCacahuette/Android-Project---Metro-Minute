@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:screenOrientation="portrait"
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -19,8 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StationsListActivity"
-            android:label="@string/title_activity_stations_list"/>
+        <activity
+            android:name=".StationsListActivity"
+            android:label="@string/title_activity_stations_list"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 

@@ -52,6 +52,7 @@
 
     <Button
         android:id="@+id/Recherche_Button"
+        android:tag = "Recherche_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
@@ -63,6 +64,7 @@
 
     <Button
         android:id="@+id/MlistButton"
+        android:tag = "MlistButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="388dp"
